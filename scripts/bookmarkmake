@@ -1,0 +1,13 @@
+#!/bin/dash
+
+bookmark="$(xclip -o)"
+file="$HOME/.local/bookmarks"
+
+if grep -q "^$bookmark$" "$file"; then
+    notify-send "oops." "already bookmarked"
+else
+    notify-send "Bookmark added!" "$bookmark is now saved to the file"
+    echo "$bookmark" >> "$file"
+    kitty --class medium --title popup -e nvim "$file"
+fi
+

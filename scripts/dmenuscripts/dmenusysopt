@@ -1,0 +1,38 @@
+#!/bin/dash
+
+menu(){
+    printf "lock\n"
+    printf "sleep\n"
+    printf "shutdown\n"
+    printf "reboot\n"
+    printf "exitx\n"
+}
+
+main(){
+    choice="$(menu | dmenu -f -i -p "󰚩 system")"
+
+    case "$choice" in
+        lock)
+            slock
+            ;;
+        sleep)
+            systemctl suspend
+            ;;
+        shutdown)
+            shutdown now
+            ;;
+        reboot)
+            reboot
+            ;;
+        exitx)
+            pkill dwm
+            ;;
+        *)
+            exit 1
+            ;;
+    esac
+}
+
+main
+
+

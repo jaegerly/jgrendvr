@@ -1,0 +1,23 @@
+#! /bin/sh
+
+xrandr --output DP-0 --mode 2560x1440 --rate 165 --primary --output HDMI-0 --mode 1920x1080 --rate 144 --left-of DP-0 --dpi 135
+
+setxkbmap no
+
+xset r rate 230 40
+
+redshift -O 3500
+
+nitrogen --restore
+
+dunst&
+
+clipmenud &
+
+unclutter -idle 2 &
+
+picom --no-fading-openclose &
+$HOME/.config/polybar/launch.sh
+
+sxhkd &
+

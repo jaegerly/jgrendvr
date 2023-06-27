@@ -1,0 +1,75 @@
+#!/bin/sh
+
+## ALIAS
+
+# system
+alias spsyu='sudo pacman -Syyu'
+alias p='pacman'
+alias sp='sudo pacman'
+alias spr='sudo pacman -Rns'
+alias paclean='sudo pacman -Rns $(pacman -Qtdq)'
+alias sv='sudo nvim'
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -vI'
+alias cat='bat'
+alias sleeps='systemctl suspend'
+alias cpwd='pwd | xclip -selection c'
+alias copylast='fc -ln -1 | xclip -selection c'
+
+#navigation
+alias ls='exa --icons -a --group-directories-first'
+alias ll='exa --icons -la --group-directories-first --header --git'
+# alias ll='ls -lav --ignore=..'   # show long listing of all except ".."
+# alias l='ls -lav --ignore=.?*'   # show long listing but no hidden dotfiles except "."
+alias pv='cd ..;pwd'
+alias c='clear'
+alias h='history'
+alias q='cd ;clear'
+alias locate='plocate'
+alias scripts='cd ~/.local/bin/scripts'
+
+
+# trash
+alias tr='trash'
+alias trr='trash-restore'
+alias tren='trash-empty'
+alias tre='trash-empty 15'
+alias trls='trash-list' 
+
+# programs
+alias v='$EDITOR'
+alias e='$EDITOR'
+alias lf='lfcd'
+alias copytext='xclip -sel c <'
+alias feed='newsboat'
+alias feedu='newsboat -x reload'
+alias m='ncmpcpp'
+
+## random ##
+alias spacereplace='for file in *; do mv "$file" `echo $file | tr ' ' '_'` ; done'
+alias ip='ip -color=auto'
+alias grep='grep --color=auto'
+alias icat='kitty +kitten icat'
+alias redshift='redshift -PO'
+alias nosound='systemctl --user restart pipewire pipewire-pulse'
+alias suckmake='rm -f config.h; sudo make install'
+alias suckpatch='patch -p1 <'
+
+## yt dl
+alias ytm="yt-dlp -x --audio-format mp3 --add-metadata -o '%(title)s.%(ext)s'"
+alias ytmp="yt-dlp -x --audio-format mp3 -i --add-metadata -o '%(title)s.%(ext)s'"
+alias ytdl="yt-dlp -f bestaudio/best -o '%(title)s.%(ext)s'"
+
+# rsync dots
+alias syncconfig="rsync -urvP --exclude 'QtProject.conf' --exclude 'user-dirs.dirs' --exclude 'user-dirs.locale' --exclude 'yay' --exclude 'tox' --exclude 'pulse' --exclude 'menus' --exclude 'keepassxc' --exclude 'gtk-3.0' --exclude 'glib-2.0' --exclude 'dconf' --exclude 'cef_user_data' --exclude 'mpv/watch_later' ~/.config ~/repos/jgrendvr"
+alias syncscripts="rsync -urvP ~/.local/bin/scripts ~/repos/jgrendvr"
+alias syncdots="rsync -urvP ~/.bash_profile ~/.bashrc ~/.zprofile ~/.zshrc ~/repos/jgrendvr"
+alias updatepkglist="pacman -Qqe > ~/.config/pkglist.txt"
+
+# git
+alias gaddu='git add -u'
+alias gadda='git add .'
+alias gs='git status'
+alias gc='git commit -m'
+alias gp='git push'
