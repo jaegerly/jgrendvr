@@ -4,7 +4,7 @@ export PATH="$PATH:$HOME/.local/bin/:$HOME/.local/bin/scripts:$HOME/.local/bin/s
 export EDITOR="nvim"
 export VISUAL="nvim"
 export TERMINAL="kitty"
-export BROWSER="brave"
+export BROWSER="com.brave.Browser"
 export VIDEO="mpv"
 export AUDIO="mpd"
 
